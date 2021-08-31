@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>aliplayer services</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="referrer" content="no-referrer"/>
+	<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.9.3/skins/default/aliplayer-min.css" />
+	<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.9.3/aliplayer-min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://player.alicdn.com/aliplayer/presentation/js/aliplayercomponents.min.js"></script>
+	<script type="text/javascript">var vid = window.location.href.split("url=")[1];</script>
+	<style>
+	body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}#playerCnt{width:100%;height:100%;}
+	</style>
+</head>
+<body>
+<div id="playerCnt" class="prism-player"></div>
+<script type="text/javascript">
+var player = new Aliplayer({
+	id: "playerCnt",
+	source:vid,
+	width: "100%",
+	height: "100%",
+	cover:'https://p.pstatp.com/origin/pgc-image/20c32b68be6a4d24a59a5ed18e84e67d',
+	autoplay: true,
+	preload: true,
+	rePlay: false,
+	playsinline: false,
+	useH5Prism: false,
+	isLive: false,
+	components: [{
+		name: 'MemoryPlayComponent',
+		type: AliPlayerComponent.MemoryPlayComponent,
+		args: [true]
+	}], 
+}, 
+function (player) {
+      console.log("The player is created");
+  }
+ );
+ </script>
+<div style="display: none">
+</div>
+</body>
+</html>
